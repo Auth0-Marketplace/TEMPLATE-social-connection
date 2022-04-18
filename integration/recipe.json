@@ -1,0 +1,26 @@
+{
+  "authorizationURL": "https://example.com/oauth/authorize",
+  "tokenURL": "https://example.com/oauth/token",
+  "permissions": [
+    {
+      "scope": "example",
+      "label": "Example Permission",
+      "required": false,
+      "default": true
+    }
+  ],
+  "configuration": [
+    {
+      "name": "client_id",
+      "label": "Client ID",
+      "description": "Public unique identifier for this application.",
+      "required": true
+    },
+    {
+      "name": "client_secret",
+      "label": "Client Secret",
+      "description": "Secret for this application.",
+      "required": true
+    }
+  ]
+}
