@@ -1,4 +1,4 @@
-# Social Connection
+# Social Connection Integration template
 
 This template is used to create Social Connections integrations.
 
@@ -15,7 +15,7 @@ This repo contains all the files required to create an integration that our mutu
 
 This file defines the template for the connection settings in Auth0. The following properties must be present:
 
-* `authorizationURL` - this is the URL that Auth0 will use to redirect users. If this user needs to be dynamic, use `{{configuration_name}}` and a corresponding field `name` in the `configuration` property explained below.
+* `authorizationURL` - this is the URL that Auth0 will use to redirect users. If this field needs to be dynamic, use `{{configuration_name}}` and a corresponding field `name` in the `configuration` property explained below.
 * `tokenURL` - this is the URL that Auth0 will use to exchange the authorization code returned after login. This can also be dynamic, as explained above.
 * `permissions` - this must contain an array of permission objects that the tenant admin can select when configuring this connection. Use the following properties to describe the permission(s):
     * `scope` - the value of the permission sent to the authorization URL via a `scope` parameter
@@ -45,7 +45,9 @@ This is the Markdown-formatted instructions that tenant admins will use to insta
 
 ## Build and test your Social Connection
 
-We've included a few helpful scripts in a `Makefile` that should help you build, test, and submit a quality integration. The commands below require Docker to be installed and running on your local machine (though no direct Docker experience is necessary). Download and install Docker [using these steps for your operating system](https://docs.docker.com/get-docker/). 
+We've included a few helpful scripts in a `Makefile` that should help you build, test, and submit a quality integration. You can develop your Action locally and use the commands below to lint, test, and deploy to a tenant.
+
+The commands below require Docker to be installed and running on your local machine (though no direct Docker experience is necessary). Download and install Docker [using these steps for your operating system](https://docs.docker.com/get-docker/). 
 
 * `make test` - this will run the spec file explained above, along with a few other integrity checks.
 * `make lint` - this will check and format your JS code according to our recommendations.
