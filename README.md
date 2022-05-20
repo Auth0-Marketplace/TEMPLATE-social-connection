@@ -35,9 +35,9 @@ This is the JavaScript that will run once an access token is returned. There are
 * Add the userinfo URL that should be called with the returned access token. Make sure that the authorization used against this endpoint is correct. 
 * Add the logic to map the returned identity to the [Auth0 user profile](https://auth0.com/docs/manage-users/user-accounts/user-profiles/user-profile-structure#user-profile-attributes).
 
-### `fetchUserProfile.spec.js`
+### `integration.action.spec.js`
 
-This is the Jest unit test suite that will run against your completed profile script. Adjust the value here to account for changes made in the script. 
+This is the [Jest](https://jestjs.io/docs/using-matchers) unit test suite that will run against your completed fetch profile code. Add tests for success and failure paths.
 
 ### `installation_guide.md`
 
@@ -49,7 +49,7 @@ We've included a few helpful scripts in a `Makefile` that should help you build,
 
 The commands below require Docker to be installed and running on your local machine (though no direct Docker experience is necessary). Download and install Docker [using these steps for your operating system](https://docs.docker.com/get-docker/). 
 
-* `make test` - this will run the spec file explained above, along with a few other integrity checks.
+* `make test` - this will run the Jest spec file explained above, along with a few other integrity checks.
 * `make lint` - this will check and format your JS code according to our recommendations.
 * `make deploy_init` - use this command to initialize deployments to a test tenant. You will need to [create a machine-to-machine application](https://auth0.com/docs/get-started/auth0-overview/create-applications/machine-to-machine-apps) authorized for the Management API with permissions `read:connections`, `update:connections`, `delete:connections`, and `create:connections`.
 * `make deploy_get_token` - use this command after `deploy_init` to generate an access token
