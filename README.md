@@ -41,7 +41,7 @@ This is the [Jest](https://jestjs.io/docs/using-matchers) unit test suite that w
 
 ### `installation_guide.md`
 
-This is the Markdown-formatted instructions that tenant admins will use to install and configure your connection. This file has a number of `TODO` items that indicate what needs to be added. Your guide should retain the same format and general Auth0 installation steps.
+This file contains the Markdown-formatted instructions that tenant admins will use to install and configure your integration. This file has a number of `TODO` items that indicate what needs to be added. Your guide should retain the same general format and provided Auth0 installation steps.
 
 ## Build and test your Social Connection
 
