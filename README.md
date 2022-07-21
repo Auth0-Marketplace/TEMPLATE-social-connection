@@ -43,7 +43,7 @@ This is the [Jest](https://jestjs.io/docs/using-matchers) unit test suite that w
 
 This file contains the Markdown-formatted instructions that tenant admins will use to install and configure your integration. This file has a number of `TODO` items that indicate what needs to be added. Your guide should retain the same general format and provided Auth0 installation steps.
 
-## Build and test your Social Connection
+## Build and test your integration
 
 We've included a few helpful scripts in a `Makefile` that should help you build, test, and submit a quality integration. You can develop your Action locally and use the commands below to lint, test, and deploy to a tenant.
 
