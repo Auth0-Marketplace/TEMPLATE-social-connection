@@ -14,7 +14,7 @@
 1. Select **Add Integration** (at the top of this page).
 1. Read the necessary access requirements, and select **Continue**.
 1. Configure the integration using the following fields:
-    * [[TODO: Describe all configuration fields]]
+   * [[TODO: Describe all configuration fields]]
 1. Select the **Permissions** needed for your applications.
 1. Choose and configure whether to sync user profile attributes at each login.
 1. Select **Create**.
