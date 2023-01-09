@@ -44,16 +44,15 @@ describe("fetchUserProfile", () => {
       expect(profileCallback.mock.calls[0][0]).toEqual(requestError);
     });
 
-    it("should call the callback with the response body if request is not successful", () => {
+    it("should call the callback with an error if request is not successful", () => {
       global.request = {
         get: jest.fn((opts, cb) => {
-          cb(null, { statusCode: 401 }, "__test_body__");
+          cb(null, { statusCode: 401 });
         }),
       };
       fetchUserProfile(1, defaultContext, profileCallback);
 
-      expect(profileCallback.mock.calls).toHaveLength(1);
-      expect(profileCallback.mock.calls[0][0]).toEqual(new Error("__test_body__"));
+      expect(profileCallback).toBeCalledWith(new Error("Failed status code check for user profile response. Received 401."));
     });
 
     it("should handle invalid JSON responses", () => {
@@ -65,7 +64,7 @@ describe("fetchUserProfile", () => {
       fetchUserProfile(1, defaultContext, profileCallback);
 
       expect(profileCallback.mock.calls).toHaveLength(1);
-      expect(profileCallback.mock.calls[0][0]).toEqual(new Error("__test_invalid_json__"));
+      expect(profileCallback.mock.calls[0][0]).toEqual(new Error("Failed JSON parsing for user profile response."));
     });
 
     it("should call the callback with the profile if response is ok", () => {

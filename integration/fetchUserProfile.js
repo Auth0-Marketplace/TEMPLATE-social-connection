@@ -12,15 +12,15 @@ module.exports = function fetchUserProfile(accessToken, context, callback) {
         return callback(error);
       }
 
-      if (response.statusCode !== 200) {
-        return callback(new Error(body));
+      if (response.statusCode >= 300) {
+        return callback(new Error(`Failed status code check for user profile response. Received ${response.statusCode}.`));
       }
 
       let bodyParsed;
       try {
         bodyParsed = JSON.parse(body);
       } catch (jsonError) {
-        return callback(new Error(body));
+        return callback(new Error(`Failed JSON parsing for user profile response.`));
       }
 
       const profile = {
