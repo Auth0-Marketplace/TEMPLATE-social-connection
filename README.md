@@ -22,6 +22,12 @@ This file defines the template for the connection settings in Auth0. The followi
     * `label` - the human-readable label for this permission shown to tenant admins
     * `required` - boolean to indicate whether this permission is always sent
     * `default` - boolean to indicate whether this checkbox should be checked by default (should be `true` if required)
+* `deprecatedPermissions` - optional, show and configure a section for deprecated permissions on connection settings page
+    * `description` - optional, custom description of this section
+    * `permissions` - this must contain an array of deprecated permission objects that the tenant admin can select when configuring this connection.
+        * `scope` - the value of the permission sent to the authorization URL via a `scope` parameter
+        * `label` - the human-readable label for this permission shown to tenant admins
+        * `help` - optional, a human-readable text to show as a help tooltip
 * `configuration` - this must contain an array of form field objects that the tenant can use to configure their connection. This array must include a field with a name of `client_id` and `client_secret` to contain the credentials used for exchanging an authorization code. Use the following properties to describe the fields:
     * `name` - form field name used in the connection options object. If your authorization and/or token URL(s) are dynamic, this should match the value contained within the brackets. 
     * `label` - the human-readable label for this field shown to tenant admins
