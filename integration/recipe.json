@@ -13,8 +13,8 @@
     "description": "These permissions will be removed in future",
     "permissions": [
       {
-        "key": "example_old",
-        "name": "Old example permission",
+        "scope": "example_old",
+        "label": "Old example permission",
         "help": "Removed in v2"
       }
     ]
