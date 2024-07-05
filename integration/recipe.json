@@ -9,6 +9,16 @@
       "default": true
     }
   ],
+  "deprecatedPermissions": {
+    "description": "These permissions will be removed in future",
+    "permissions": [
+      {
+        "scope": "example_old",
+        "label": "Old example permission",
+        "help": "Removed in v2"
+      }
+    ]
+  },
   "configuration": [
     {
       "name": "client_id",
